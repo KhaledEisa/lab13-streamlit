@@ -12,9 +12,9 @@ import streamlit as st
 import joblib
 import numpy as np
 
-model = joblib.load("../modeling/svc_model.pkl")
-label_encoder = joblib.load("../modeling/label_encoder.pkl")
-questions = joblib.load("../modeling/questions.pkl")
+model = joblib.load("C:/Users/dodye/Desktop/Projects/zzz/lab13-streamlit/modeling/svc_model.pkl")
+label_encoder = joblib.load("C:/Users/dodye/Desktop/Projects/zzz/lab13-streamlit/modeling/label_encoder.pkl")
+questions = joblib.load("C:/Users/dodye/Desktop/Projects/zzz/lab13-streamlit/modeling/questions.pkl")
 
 st.title("🧠 Personality Prediction App (Lab13)")
 
