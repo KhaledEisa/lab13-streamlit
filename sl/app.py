@@ -8,15 +8,24 @@ Created on Wed May 21 17:52:09 2025
 
 # !streamlit run app.py --server.headless true
 
-import streamlit as st
 import joblib
+from pathlib import Path
+import streamlit as st
 import numpy as np
 
-model = BASE_DIR / "modeling" / "svc_model.pkl"
 
+BASE_DIR = Path(__file__).resolve().parent
 
-label_encoder = BASE_DIR / "modeling" / "label_encoder.pkl"
-questions = BASE_DIR / "modeling" / "questions.pkl"
+model_path         = BASE_DIR / "modeling" / "svc_model.pkl"
+le_path            = BASE_DIR / "modeling" / "label_encoder.pkl"
+questions_path     = BASE_DIR / "modeling" / "questions.pkl"
+
+# sanity check (optional)
+st.write("Model exists?", model_path.exists())
+
+model          = joblib.load(model_path)
+label_encoder  = joblib.load(le_path)
+questions      = joblib.load(questions_path)
 
 st.title("🧠 Personality Prediction App (Lab13)")
 
